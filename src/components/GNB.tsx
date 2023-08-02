@@ -12,7 +12,7 @@ const GNB = () => {
 const GNBStyle = styled.div`
   width: 100%;
   min-width: 200px;
-  background-color: aqua;
+  background-color: var(--color-gray-001);
 `;
 
 // eslint-disable-next-line react-refresh/only-export-components

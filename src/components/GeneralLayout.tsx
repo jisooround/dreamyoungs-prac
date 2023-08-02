@@ -20,7 +20,6 @@ const GeneralLayoutStyle = styled.div`
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  background-color: lightgray;
 `;
 
 const GeneralBodyStyle = styled.div``;

@@ -1,16 +1,16 @@
-import DatePicerUi from "./DatePickerUi";
+import DatePickerUi from "./DatePickerUi";
 import styled from "styled-components";
 
 type Props = {
   label: string;
-  value: string;
+  value?: string;
 };
 
-const FormDateType = ({ label, value }: Props) => {
+const FormDateType = ({ label }: Props) => {
   return (
     <DateStyle>
       {label}
-      <DatePicerUi value={value} />
+      <DatePickerUi date={"2014-05-03"} />
     </DateStyle>
   );
 };

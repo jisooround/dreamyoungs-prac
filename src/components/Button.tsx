@@ -5,7 +5,11 @@ type Props = {
 };
 
 const Button = ({ content }: Props) => {
-  return <ButtonStyle>{content}</ButtonStyle>;
+  return (
+    <ButtonStyle type="submit" value="Submit">
+      {content}
+    </ButtonStyle>
+  );
 };
 
 const ButtonStyle = styled.button`

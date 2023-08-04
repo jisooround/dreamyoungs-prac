@@ -5,9 +5,14 @@ const GlobalStyles = createGlobalStyle`
 ${reset}
 
 body{
+  font-family: "Noto Sans KR", sans-serif;
   button{
     border: none;
     background-color: transparent;
+  }
+  input {
+    outline: none;
+    border: none;
   }
 }
 
@@ -19,6 +24,7 @@ body{
   --color-primary-dark: #003AD6;
   --color-primary-light: #DBE1FD;
   --color-gray-border: #DEDEDE;
+  --color-gray-000: #FAFBFC;
   --color-gray-001: #F6F7F8;
   --color-gray-002: #F0F2F3;
   --color-gray-003: #E0E4E8;

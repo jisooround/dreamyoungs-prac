@@ -92,6 +92,10 @@ const CalendarUI = ({ date }: Props) => {
 };
 
 const CalendarContainer = styled.div`
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--color-gray-border);
   position: relative;
   img {
     height: 20px;

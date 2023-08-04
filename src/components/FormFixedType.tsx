@@ -9,7 +9,7 @@ const FormFixedType = ({ label, value }: Props) => {
   return (
     <FixedStyle>
       <label htmlFor={label}>{label}</label>
-      <label id={label}>{value}</label>
+      <p id={label}>{value}</p>
     </FixedStyle>
   );
 };
@@ -17,11 +17,16 @@ const FormFixedType = ({ label, value }: Props) => {
 const FixedStyle = styled.div`
   width: 100%;
   display: flex;
-  background-color: var(--color-gray-001);
   padding: 15px 0;
+  margin: 10px 0;
+  color: var(--color-black);
   label {
+    font-weight: 600;
     width: 80px;
-    padding-right: 30px;
+    padding-right: 60px;
+  }
+  p {
+    font-size: 14px;
   }
 `;
 

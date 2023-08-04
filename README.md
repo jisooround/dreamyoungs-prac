@@ -17,3 +17,9 @@ $ npm run start
 - 달력 라이브러리
 - react router dom
 - recoli?
+
+### 다시 체크할 것
+
+- SVG 사용
+- GNB 스타일
+- 달력 불필요한 코드 제거

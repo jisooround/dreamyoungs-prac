@@ -1,10 +1,13 @@
 import styled from "styled-components";
+import Category from "./Category";
 
 const GNB = () => {
   return (
     <GNBStyle>
-      GNB
-      <div>하이</div>
+      <Category content={"대메뉴"}>
+        <li>소메뉴</li>
+        <li>소메뉴</li>
+      </Category>
     </GNBStyle>
   );
 };

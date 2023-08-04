@@ -102,6 +102,7 @@ const OptionStyle = styled.div`
     margin-left: -2px;
   }
   label {
+    font-weight: 400;
     display: block;
     user-select: none;
     font-size: 14px;

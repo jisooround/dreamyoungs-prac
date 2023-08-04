@@ -25,7 +25,7 @@ const FormRadioType = ({ options, label, value }: Props) => {
   console.log(currentValue);
   return (
     <RadioStyle>
-      <p>{label}</p>
+      <LabelStyle>{label}</LabelStyle>
       <RadioBoxStyle>
         {options.map((option) => (
           <label className="group_input" htmlFor={option}>
@@ -53,12 +53,6 @@ const RadioStyle = styled.div`
   padding: 15px 0;
   color: var(--color-black);
   align-items: center;
-  p {
-    font-weight: 600;
-    width: 80px;
-    padding-right: 60px;
-    font-size: 14px;
-  }
   span {
     font-size: 12px;
     color: red;
@@ -101,6 +95,13 @@ const RadioBoxStyle = styled.div`
       width: 100%;
     }
   }
+`;
+
+const LabelStyle = styled.label`
+  font-size: 14px;
+  font-weight: 600;
+  width: 80px;
+  padding-right: 60px;
 `;
 
 export default FormRadioType;

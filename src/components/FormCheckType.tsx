@@ -22,7 +22,7 @@ const FormCheckType = ({ options, label, value }: Props) => {
   console.log(currentValue);
   return (
     <CheckStyle>
-      <p>{label}</p>
+      <LabelStyle>{label}</LabelStyle>
       <CheckBoxStyle>
         {options.map((option) => (
           <label className="group_input" htmlFor={option}>
@@ -49,12 +49,6 @@ const CheckStyle = styled.div`
   padding: 15px 0;
   color: var(--color-black);
   align-items: center;
-  p {
-    font-weight: 600;
-    width: 80px;
-    padding-right: 60px;
-    font-size: 14px;
-  }
   span {
     font-size: 12px;
     color: red;
@@ -107,6 +101,13 @@ const CheckBoxStyle = styled.div`
       width: 100%;
     }
   }
+`;
+
+const LabelStyle = styled.label`
+  font-size: 14px;
+  font-weight: 600;
+  width: 80px;
+  padding-right: 60px;
 `;
 
 export default FormCheckType;

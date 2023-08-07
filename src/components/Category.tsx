@@ -30,5 +30,10 @@ const Category = ({ content, children }: Props) => {
 
 const MainMenuStyle = styled.div`
   display: flex;
+  color: var(--color-gray-009);
+  padding: 10px 28px;
+  &:hover {
+    background-color: var(--color-gray-002);
+  }
 `;
 export default Category;

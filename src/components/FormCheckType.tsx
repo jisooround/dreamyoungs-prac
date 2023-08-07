@@ -19,7 +19,7 @@ const FormCheckType = ({ options, label, value }: Props) => {
     }
   };
 
-  console.log(currentValue);
+  // console.log(currentValue);
   return (
     <CheckStyle>
       <LabelStyle>{label}</LabelStyle>

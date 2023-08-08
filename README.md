@@ -31,3 +31,8 @@ $ npm run start
 - [x] api 연결 (GET, POST)
 - [x] api 응답 메세지로 띄워주기 (에러시에 alert)
 - [x] 달력 UI
+
+### 참고사항
+
+> VSCODE 버전: 1.80.2
+> npm 버전 : 9.8.1

@@ -3,18 +3,18 @@ import Title from "../components/Title";
 import { api } from "../api/apiControl";
 import { useEffect, useState } from "react";
 import { ITestData } from "../types/data";
+import { useLocation } from "react-router-dom";
 
-const Page1 = () => {
+const Page = () => {
   const [testData, setTestData] = useState<ITestData | undefined>();
-  console.log(testData?.data);
-
+  const { pathname } = useLocation();
   useEffect(() => {
     async function getTest() {
       const res = await api.getData();
       setTestData(res);
     }
     getTest();
-  }, []);
+  }, [pathname]);
 
   return (
     <div>
@@ -24,4 +24,4 @@ const Page1 = () => {
   );
 };
 
-export default Page1;
+export default Page;

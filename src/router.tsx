@@ -1,3 +1,4 @@
+// 라우터 관리
 import { createBrowserRouter } from "react-router-dom";
 import { Router as RemixRouter } from "@remix-run/router/dist/router";
 import Page from "./pages/Page";

@@ -88,9 +88,10 @@ const Form = ({ data }: Props) => {
 };
 
 const FormStyle = styled.form`
-  margin: 0 2.5rem;
+  margin: 0 40px;
+  padding: 20px 0;
   border-top: 1px solid var(--color-gray-003);
-  border-bottom: 1px solid var(--color-gray-003);
+  border-bottom: 1px solid var(--color-gray-002);
   position: relative;
 `;
 

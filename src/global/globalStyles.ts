@@ -38,7 +38,7 @@ body{
   --color-gray-007: #9C9C9C;
   --color-gray-008: #777777;
   --color-gray-009: #565656;
-  --color-pink: #FF00FF;
+  --color-red: #F03738;
 }
 `;
 

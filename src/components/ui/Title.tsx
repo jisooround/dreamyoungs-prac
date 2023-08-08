@@ -14,11 +14,11 @@ const Title = ({ content }: Props) => {
 };
 
 const TitleContainerStyle = styled.div`
-  margin: 0 2.5rem;
-  padding: 2.5rem 0;
+  margin: 0 40px;
+  padding: 40px 0;
   h2 {
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 32px;
     color: var(--color-black);
   }
 `;

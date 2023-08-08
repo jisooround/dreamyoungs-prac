@@ -14,7 +14,11 @@ body{
     outline: none;
     border: none;
   }
-}
+  a {
+    text-decoration: none;
+    color: var(--color-black);
+  }
+} 
 
 :root {
   //color

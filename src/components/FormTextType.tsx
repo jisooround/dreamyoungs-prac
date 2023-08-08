@@ -1,15 +1,31 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 type Props = {
+  name: string;
   label: string;
-  value: string;
+  value: string | undefined;
 };
 
-const FormTextType = ({ label, value }: Props) => {
+const FormTextType = ({ name, label, value }: Props) => {
+  const [isValue, setIsValue] = useState<string | undefined>(value);
+
+  useEffect(() => {
+    setIsValue(value);
+  }, [value]);
+
   return (
     <TextStyle>
-      <LabelStyle htmlFor={label}>{label}</LabelStyle>
-      <input name={label} type="text" id={label} placeholder={value} />
+      <LabelStyle htmlFor={name}>{label}</LabelStyle>
+      <input
+        onChange={(event) => {
+          setIsValue(event.target.value);
+        }}
+        name={name}
+        type="text"
+        value={isValue || ""}
+        placeholder={value}
+      />
     </TextStyle>
   );
 };
@@ -29,9 +45,10 @@ const TextStyle = styled.div`
 `;
 
 const LabelStyle = styled.label`
-  font-weight: 600;
+  font-weight: 500;
   width: 80px;
   padding-right: 60px;
   font-size: 14px;
 `;
+
 export default FormTextType;

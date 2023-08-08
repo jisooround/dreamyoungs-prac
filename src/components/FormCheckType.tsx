@@ -1,21 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import CheckIcon from "../assets/images/check_checked.svg";
+import { IOption } from "../types/data";
 
 type Props = {
   label: string;
-  value: string;
-  options: string[];
+  name: string;
+  value: string[] | undefined;
+  options: IOption[];
 };
-const FormCheckType = ({ options, label, value }: Props) => {
-  const [currentValue, setcurrentValue] = useState<string[]>([value]); // currentValue를 배열로 초기화
+
+const FormCheckType = ({ name, options, label, value }: Props) => {
+  const [currentValue, setCurrentValue] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (value) {
+      setCurrentValue(value);
+    }
+  }, [value]);
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const option = event.target.value;
     if (event.target.checked) {
-      setcurrentValue((prev) => [...prev, option]); // 선택된 값을 배열에 추가
+      setCurrentValue((prev) => [...prev, option]);
     } else {
-      setcurrentValue((prev) => prev.filter((item) => item !== option)); // 선택 해제된 값을 배열에서 제거
+      setCurrentValue((prev) => prev.filter((item) => item !== option));
     }
   };
 
@@ -25,16 +34,20 @@ const FormCheckType = ({ options, label, value }: Props) => {
       <LabelStyle>{label}</LabelStyle>
       <CheckBoxStyle>
         {options.map((option) => (
-          <label className="group_input" htmlFor={option}>
+          <label
+            className="group_input"
+            htmlFor={option.optionValue}
+            key={option.optionLabel}
+          >
             <input
               type="checkbox"
-              id={option}
-              value={option}
-              name={label}
-              checked={currentValue.includes(option)}
+              id={option.optionValue}
+              value={option.optionLabel}
+              name={name}
+              checked={currentValue.includes(option.optionLabel)}
               onChange={handleCheckboxChange}
             />
-            {option}
+            {option.optionLabel}
           </label>
         ))}
       </CheckBoxStyle>
@@ -105,7 +118,7 @@ const CheckBoxStyle = styled.div`
 
 const LabelStyle = styled.label`
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   width: 80px;
   padding-right: 60px;
 `;

@@ -1,15 +1,16 @@
 import styled from "styled-components";
 
 type Props = {
+  name: string;
   label: string;
-  value: string;
+  value: string | undefined;
 };
 
-const FormFixedType = ({ label, value }: Props) => {
+const FormFixedType = ({ name, label, value }: Props) => {
   return (
     <FixedStyle>
-      <LabelStyle htmlFor={label}>{label}</LabelStyle>
-      <input name={label} id={label} value={value} readOnly />
+      <LabelStyle htmlFor={name}>{label}</LabelStyle>
+      <input name={name} value={value !== undefined ? value : ""} readOnly />
     </FixedStyle>
   );
 };
@@ -27,7 +28,7 @@ const FixedStyle = styled.div`
 `;
 
 const LabelStyle = styled.label`
-  font-weight: 600;
+  font-weight: 500;
   width: 80px;
   padding-right: 60px;
   font-size: 14px;

@@ -3,14 +3,15 @@ import styled from "styled-components";
 
 type Props = {
   label: string;
-  value?: string;
+  value?: string | undefined;
+  name: string;
 };
 
-const FormDateType = ({ label }: Props) => {
+const FormDateType = ({ name, value, label }: Props) => {
   return (
     <DateStyle>
       <LabelStyle>{label}</LabelStyle>
-      <DatePickerUi date={"2014-05-03"} />
+      <DatePickerUi name={name} date={value} />
     </DateStyle>
   );
 };
@@ -25,7 +26,7 @@ const DateStyle = styled.div`
 
 const LabelStyle = styled.label`
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   width: 80px;
   padding-right: 60px;
 `;

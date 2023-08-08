@@ -1,18 +1,27 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { IOption } from "../types/data";
 
 type Props = {
   label: string;
-  value: string;
-  options: string[];
+  name: string;
+  value: string | undefined;
+  options: IOption[];
 };
-const FormRadioType = ({ options, label, value }: Props) => {
-  const [currentValue, setcurrentValue] = useState(value);
+
+const FormRadioType = ({ name, options, label, value }: Props) => {
+  const [currentValue, setCurrentValue] = useState(value);
   const [showMessage, setShowMessage] = useState(false);
 
-  const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setcurrentValue(event.target.value);
-  };
+  // const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   setcurrentValue(event.target.value);
+  // };
+
+  useEffect(() => {
+    if (value) {
+      setCurrentValue(value);
+    }
+  }, [value]);
 
   useEffect(() => {
     if (currentValue === "선택1") {
@@ -22,22 +31,26 @@ const FormRadioType = ({ options, label, value }: Props) => {
     }
   }, [currentValue]);
 
-  console.log(currentValue);
+  console.log("currentValue", currentValue);
   return (
     <RadioStyle>
       <LabelStyle>{label}</LabelStyle>
       <RadioBoxStyle>
         {options.map((option) => (
-          <label className="group_input" htmlFor={option}>
+          <label
+            className="group_input"
+            htmlFor={option.optionValue}
+            key={option.optionLabel}
+          >
             <input
               type="radio"
-              id={option}
-              value={option}
-              name={label}
-              checked={currentValue === option}
-              onChange={handleRadioChange}
+              id={option.optionValue}
+              value={option.optionLabel}
+              name={name}
+              checked={currentValue === option.optionLabel}
+              onChange={() => setCurrentValue(option.optionLabel)}
             />
-            {option}
+            {option.optionLabel}
           </label>
         ))}
       </RadioBoxStyle>
@@ -99,7 +112,7 @@ const RadioBoxStyle = styled.div`
 
 const LabelStyle = styled.label`
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   width: 80px;
   padding-right: 60px;
 `;

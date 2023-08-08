@@ -28,7 +28,7 @@ const GNBStyle = styled.div`
   min-width: 200px;
   background-color: var(--color-gray-001);
   padding: 20px 0;
-  border-right: 1px solid var(--color-gray-003);
+  border-right: 2px solid var(--color-gray-003);
 `;
 
 // eslint-disable-next-line react-refresh/only-export-components

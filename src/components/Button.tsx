@@ -19,6 +19,7 @@ const ButtonStyle = styled.button`
   font-size: 14px;
   background-color: var(--color-primary);
   color: var(--color-white);
+  cursor: pointer;
   position: absolute;
   bottom: -60px;
   right: 0;

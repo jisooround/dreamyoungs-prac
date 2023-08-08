@@ -23,6 +23,8 @@ $ npm run start
 - react-datepicker : 달력 라이브러리
 - react router dom : 라우팅
 - vite-plugin-mkcert : local환경에서 https로 실행시키기 (vite config에서 https 설정하였습니다.)
+- axios : api 연결
+- lodash : 달력 년도 셀렉박스의 숫자 배열 생성
 
 ### 구현 내용
 

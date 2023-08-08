@@ -13,10 +13,6 @@ const FormRadioType = ({ name, options, label, value }: Props) => {
   const [currentValue, setCurrentValue] = useState(value);
   const [showMessage, setShowMessage] = useState(false);
 
-  // const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   setcurrentValue(event.target.value);
-  // };
-
   useEffect(() => {
     if (value) {
       setCurrentValue(value);
@@ -24,14 +20,13 @@ const FormRadioType = ({ name, options, label, value }: Props) => {
   }, [value]);
 
   useEffect(() => {
-    if (currentValue === "선택1") {
+    if (currentValue === "선택3") {
       setShowMessage(true);
     } else {
       setShowMessage(false);
     }
   }, [currentValue]);
 
-  console.log("currentValue", currentValue);
   return (
     <RadioStyle>
       <LabelStyle>{label}</LabelStyle>

@@ -30,13 +30,13 @@ export const routerData: RouterBase[] = [
   },
   {
     id: 3,
-    path: "/",
+    path: "/3",
     label: "page3",
     element: <Page3 />,
   },
   {
     id: 4,
-    path: "/",
+    path: "/4",
     label: "page4",
     element: <Page4 />,
   },

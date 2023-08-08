@@ -1,12 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Router as RemixRouter } from "@remix-run/router/dist/router";
-import Page1 from "./pages/Page1";
-import Page2 from "./pages/Page2";
-import Page3 from "./pages/Page3";
-import Page4 from "./pages/Page4";
+import Page from "./pages/Page";
 import NotFound from "./pages/NotFound";
 import GeneralLayout from "./components/GeneralLayout";
-// import App from "./App";
 
 interface RouterBase {
   id: number; // 페이지 아이디 (반복문용 고유값)
@@ -20,25 +16,25 @@ export const routerData: RouterBase[] = [
     id: 1,
     path: "/",
     label: "page1",
-    element: <Page1 />,
+    element: <Page />,
   },
   {
     id: 2,
     path: "/2",
     label: "page2",
-    element: <Page2 />,
+    element: <Page />,
   },
   {
     id: 3,
     path: "/3",
     label: "page3",
-    element: <Page3 />,
+    element: <Page />,
   },
   {
     id: 4,
     path: "/4",
     label: "page4",
-    element: <Page4 />,
+    element: <Page />,
   },
 ];
 

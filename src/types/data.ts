@@ -1,4 +1,4 @@
-// TestData.data 타입
+// API GET data 타입
 export interface IData {
   date: string;
   info1: string;
@@ -9,6 +9,7 @@ export interface IData {
   info6: string[];
 }
 
+// API POST Data 타입
 export interface IFormData {
   info2: FormDataEntryValue | null;
   info4: FormDataEntryValue | null;
@@ -17,14 +18,21 @@ export interface IFormData {
   info6: FormDataEntryValue[];
 }
 
-// // TestData 타입
+// GET TestData 타입
 export interface ITestData {
   ok: boolean;
   httpcode: 200 | 400 | 500;
   data: IData;
 }
 
+// 라디오, 선택 박스 옵션 타입
 export interface IOption {
   optionLabel: string;
   optionValue: string;
+}
+
+// 소메뉴 카테고리 리스트 타입
+export interface ICategoryList {
+  label: string;
+  path: string;
 }

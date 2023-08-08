@@ -1,3 +1,4 @@
+// 타이틀 컴포넌트
 import styled from "styled-components";
 
 type Props = {

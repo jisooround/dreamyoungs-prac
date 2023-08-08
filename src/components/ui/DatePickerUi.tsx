@@ -6,10 +6,10 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import _ from "lodash";
 import Select from "./Select";
-import backIcon from "../assets/images/calender_back_default.png";
-import backIconHover from "../assets/images/calender_back_hover.png";
-import nextIcon from "../assets/images/calender_next_default.png";
-import nextIconHover from "../assets/images/calender_next_hover.png";
+import backIcon from "../../assets/images/calender_back_default.png";
+import backIconHover from "../../assets/images/calender_back_hover.png";
+import nextIcon from "../../assets/images/calender_next_default.png";
+import nextIconHover from "../../assets/images/calender_next_hover.png";
 import "react-datepicker/dist/react-datepicker.css";
 import "./DatePickerUi.css";
 

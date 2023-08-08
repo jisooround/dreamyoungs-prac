@@ -1,9 +1,10 @@
+// Form 양식 컴포넌트
 import styled from "styled-components";
 import FormFixedType from "./FormFixedType";
 import FormTextType from "./FormTextType";
 import FormDateType from "./FormDateType";
 import FormRadioType from "./FormRadioType";
-import Button from "../components/Button";
+import Button from "./ui/Button";
 import { IData } from "../types/data";
 import FormCheckType from "./FormCheckType";
 import { api } from "../api/apiControl";
@@ -13,11 +14,44 @@ type Props = {
   data?: IData;
 };
 
+// 라디오박스 옵션 리스트
+const radioOptionList = [
+  {
+    optionLabel: "선택1",
+    optionValue: "radio_1",
+  },
+  {
+    optionLabel: "선택2",
+    optionValue: "radio_2",
+  },
+  {
+    optionLabel: "선택3",
+    optionValue: "radio_3",
+  },
+];
+
+// 체크박스 옵션 리스트
+const checkOptionList = [
+  {
+    optionLabel: "선택1",
+    optionValue: "check_1",
+  },
+  {
+    optionLabel: "선택2",
+    optionValue: "check_2",
+  },
+  {
+    optionLabel: "선택3",
+    optionValue: "check_3",
+  },
+];
+
 const Form = ({ data }: Props) => {
   const submitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
 
+    // form data 접근
+    const formData = new FormData(event.currentTarget);
     const getFormData = {
       info2: formData.get("info2"),
       info4: formData.get("info4"),
@@ -25,38 +59,9 @@ const Form = ({ data }: Props) => {
       info5: formData.get("info5"),
       info6: formData.getAll("info6"),
     };
+    // post 함수 작동
     api.postData(getFormData);
   };
-
-  const radioOptionList = [
-    {
-      optionLabel: "선택1",
-      optionValue: "radio_1",
-    },
-    {
-      optionLabel: "선택2",
-      optionValue: "radio_2",
-    },
-    {
-      optionLabel: "선택3",
-      optionValue: "radio_3",
-    },
-  ];
-
-  const checkOptionList = [
-    {
-      optionLabel: "선택1",
-      optionValue: "check_1",
-    },
-    {
-      optionLabel: "선택2",
-      optionValue: "check_2",
-    },
-    {
-      optionLabel: "선택3",
-      optionValue: "check_3",
-    },
-  ];
 
   return (
     <FormStyle onSubmit={submitHandler}>

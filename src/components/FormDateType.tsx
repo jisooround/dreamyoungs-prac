@@ -1,4 +1,5 @@
-import DatePickerUi from "./DatePickerUi";
+// Form - 날짜 컴포넌트
+import DatePickerUi from "./ui/DatePickerUi";
 import styled from "styled-components";
 
 type Props = {

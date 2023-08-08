@@ -1,6 +1,7 @@
+// Select Box UI 컴포넌트 (달력에서 사용)
 import { useState } from "react";
 import styled from "styled-components";
-import selectIcon from "../assets/images/select.png";
+import selectIcon from "../../assets/images/select.png";
 
 type Props = {
   options: number[] | string[];

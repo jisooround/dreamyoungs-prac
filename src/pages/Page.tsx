@@ -1,5 +1,6 @@
+// 페이지 (재사용)
 import Form from "../components/Form";
-import Title from "../components/Title";
+import Title from "../components/ui/Title";
 import { api } from "../api/apiControl";
 import { useEffect, useState } from "react";
 import { ITestData } from "../types/data";

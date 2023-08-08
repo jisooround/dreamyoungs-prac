@@ -1,3 +1,4 @@
+// Form - 체크박스 컴포넌트
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import checkIcon from "../assets/images/check_checked.svg";
@@ -11,7 +12,7 @@ type Props = {
 };
 
 const FormCheckType = ({ name, options, label, value }: Props) => {
-  const [currentValue, setCurrentValue] = useState<string[]>([]);
+  const [currentValue, setCurrentValue] = useState<string[]>([]); // 선택된 값 관리
 
   useEffect(() => {
     if (value) {
@@ -28,7 +29,6 @@ const FormCheckType = ({ name, options, label, value }: Props) => {
     }
   };
 
-  // console.log(currentValue);
   return (
     <CheckStyle>
       <LabelStyle>{label}</LabelStyle>
@@ -108,9 +108,6 @@ const CheckBoxStyle = styled.div`
         background-repeat: no-repeat;
         background-size: 11px;
       }
-    }
-    p {
-      width: 100%;
     }
   }
 `;

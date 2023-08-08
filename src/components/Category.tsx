@@ -64,10 +64,11 @@ const Category = ({ content, list }: Props) => {
               <li
                 style={{
                   backgroundColor:
+                    item.path === pathname ? "var(--color-gray-003)" : "",
+                  color:
                     item.path === pathname
-                      ? "var(--color-gray-003)"
-                      : "transparent",
-                  color: item.path === pathname ? "var(--color-black)" : "#777",
+                      ? "var(--color-black)"
+                      : "var(--color-gray-008)",
                 }}
               >
                 {item.label}
@@ -101,9 +102,8 @@ const MainMenuStyle = styled.div<{ $isActive?: boolean }>`
 const SubMenuStyle = styled.ul`
   li {
     font-weight: 400;
-    color: #777;
+    color: var(--color-gray-008);
     padding: 15px 28px 15px 40px;
-
     &:hover {
       background-color: var(--color-gray-002);
     }

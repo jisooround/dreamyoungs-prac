@@ -1,3 +1,4 @@
+// GNB 컴포넌트
 import styled from "styled-components";
 import Category from "./Category";
 

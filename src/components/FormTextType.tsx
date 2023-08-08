@@ -1,3 +1,4 @@
+// Form - Text input 컴포넌트
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
@@ -8,7 +9,7 @@ type Props = {
 };
 
 const FormTextType = ({ name, label, value }: Props) => {
-  const [isValue, setIsValue] = useState<string | undefined>(value);
+  const [isValue, setIsValue] = useState<string | undefined>(value); // input값 관리
 
   useEffect(() => {
     setIsValue(value);

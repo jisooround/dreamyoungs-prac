@@ -1,3 +1,4 @@
+// Form - 라디오박스 컴포넌트
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { IOption } from "../types/data";
@@ -10,8 +11,8 @@ type Props = {
 };
 
 const FormRadioType = ({ name, options, label, value }: Props) => {
-  const [currentValue, setCurrentValue] = useState(value);
-  const [showMessage, setShowMessage] = useState(false);
+  const [currentValue, setCurrentValue] = useState(value); // 선택 값 관리
+  const [showMessage, setShowMessage] = useState(false); // 메세지 노출 상태 관리
 
   useEffect(() => {
     if (value) {
@@ -98,9 +99,6 @@ const RadioBoxStyle = styled.div`
         box-sizing: border-box;
         border: 4px solid var(--color-primary);
       }
-    }
-    p {
-      width: 100%;
     }
   }
 `;

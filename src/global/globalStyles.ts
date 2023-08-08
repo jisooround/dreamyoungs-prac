@@ -36,7 +36,7 @@ body{
   --color-gray-005: #BEBEBE;
   --color-gray-006: #9BA1A7;
   --color-gray-007: #9C9C9C;
-  --color-gray-008: #74797D;
+  --color-gray-008: #777777;
   --color-gray-009: #565656;
   --color-pink: #FF00FF;
 }

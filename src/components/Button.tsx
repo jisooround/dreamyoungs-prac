@@ -19,6 +19,9 @@ const ButtonStyle = styled.button`
   font-size: 14px;
   background-color: var(--color-primary);
   color: var(--color-white);
+  position: absolute;
+  bottom: -60px;
+  right: 0;
   &:hover {
     background-color: var(--color-primary-dark);
   }

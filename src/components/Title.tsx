@@ -15,7 +15,6 @@ const Title = ({ content }: Props) => {
 const TitleContainerStyle = styled.div`
   margin: 0 2.5rem;
   padding: 2.5rem 0;
-
   h2 {
     font-weight: 700;
     font-size: 2rem;

@@ -41,12 +41,10 @@ const Category = ({ content, list }: Props) => {
     isActiveCheck();
   }, [pathname, isActiveCheck]);
 
-  console.log("isActive", isActive);
-
   return (
     <>
       <MainMenuStyle
-        isActive={isActive}
+        $isActive
         onClick={() => {
           toggle();
           isActiveCheck();
@@ -85,11 +83,10 @@ const Category = ({ content, list }: Props) => {
   );
 };
 
-const MainMenuStyle = styled.div<{ isActive: boolean }>`
+const MainMenuStyle = styled.div<{ $isActive?: boolean }>`
   display: flex;
-
   color: ${(props) =>
-    props.isActive ? "var(--color-black)" : "var(--color-gray-009)"};
+    props.$isActive ? "var(--color-black)" : "var(--color-gray-009)"};
   font-weight: 500;
   padding: 15px 28px;
   align-items: center;

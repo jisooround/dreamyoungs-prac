@@ -64,7 +64,7 @@ const RadioStyle = styled.div`
   align-items: center;
   span {
     font-size: 12px;
-    color: red;
+    color: var(--color-red);
     position: absolute;
     top: 53px;
     left: 140px;

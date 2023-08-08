@@ -7,9 +7,11 @@
 ```
 $ git clone https://github.com/jisooround/dreamyoungs-prac.git
 ```
+
 ```
 $ cd dreamyoungs-prac
 ```
+
 ```
 $ npm install
 ```

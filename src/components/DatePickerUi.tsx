@@ -1,21 +1,34 @@
-import "react-datepicker/dist/react-datepicker.css";
-import "./DatePickerUi.css";
 import DatePicker from "react-datepicker";
 import { ko } from "date-fns/locale";
 import { getYear, getMonth } from "date-fns";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import _ from "lodash";
 import Select from "./Select";
 import backIcon from "../assets/images/calender_back_default.png";
+import backIconHover from "../assets/images/calender_back_hover.png";
 import nextIcon from "../assets/images/calender_next_default.png";
+import nextIconHover from "../assets/images/calender_next_hover.png";
+import "react-datepicker/dist/react-datepicker.css";
+import "./DatePickerUi.css";
 
 type Props = {
-  date: string;
+  date: string | undefined;
+  name: string;
 };
 
-const CalendarUI = ({ date }: Props) => {
-  const [startDate, setStartDate] = useState(new Date(date));
+const CalendarUI = ({ name, date }: Props) => {
+  const [startDate, setStartDate] = useState<Date | undefined>(
+    date ? new Date(date) : undefined,
+  );
+  const [isBackHover, setIsBackHover] = useState<boolean>(false);
+  const [isNextHover, setIsNextHover] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (date) {
+      setStartDate(new Date(date));
+    }
+  }, [date]);
 
   const years = _.range(1990, getYear(new Date()) + 1, 1);
 
@@ -25,13 +38,13 @@ const CalendarUI = ({ date }: Props) => {
   return (
     <CalendarContainer>
       <DatePicker
+        name={name}
         locale={ko}
         dateFormat="yyyy.MM.dd"
-        selected={startDate}
+        selected={startDate || undefined}
         onChange={(date: Date) => {
           setStartDate(date);
         }}
-        shouldCloseOnSelect={false}
         renderCustomHeader={({
           date,
           changeYear,
@@ -49,6 +62,8 @@ const CalendarUI = ({ date }: Props) => {
             }}
           >
             <button
+              onMouseEnter={() => setIsBackHover(true)}
+              onMouseLeave={() => setIsBackHover(false)}
               type="button"
               onClick={decreaseMonth}
               disabled={prevMonthButtonDisabled}
@@ -57,7 +72,10 @@ const CalendarUI = ({ date }: Props) => {
                 padding: 0,
               }}
             >
-              <img src={backIcon} alt="" />
+              <img
+                src={isBackHover ? backIconHover : backIcon}
+                alt="backIcon"
+              />
             </button>
             <Select
               options={years}
@@ -74,6 +92,8 @@ const CalendarUI = ({ date }: Props) => {
               }
             />
             <button
+              onMouseEnter={() => setIsNextHover(true)}
+              onMouseLeave={() => setIsNextHover(false)}
               type="button"
               style={{
                 marginRight: -10,
@@ -82,7 +102,10 @@ const CalendarUI = ({ date }: Props) => {
               onClick={increaseMonth}
               disabled={nextMonthButtonDisabled}
             >
-              <img src={nextIcon} alt="" />
+              <img
+                src={isNextHover ? nextIconHover : nextIcon}
+                alt="nextIcon"
+              />
             </button>
           </div>
         )}
@@ -97,6 +120,8 @@ const CalendarContainer = styled.div`
   border-radius: 5px;
   border: 1px solid var(--color-gray-border);
   position: relative;
+  display: flex;
+  align-items: center;
   img {
     height: 20px;
   }

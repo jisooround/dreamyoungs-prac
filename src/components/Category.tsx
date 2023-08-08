@@ -1,5 +1,4 @@
 // 대메뉴 카테고리 컴포넌트
-
 import { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 import foldActive from "../assets/images/gnb_fold_active.png";
@@ -7,21 +6,17 @@ import foldInActive from "../assets/images/gnb_fold_inactive.png";
 import unfoldActive from "../assets/images/gnb_unfold_active.png";
 import unfoldInActive from "../assets/images/gnb_unfold_inactive.png";
 import { Link, useLocation } from "react-router-dom";
+import { ICategoryList } from "../types/data";
 
 type Props = {
   content: string;
-  list: categoryList[];
+  list: ICategoryList[];
 };
-
-interface categoryList {
-  label: string;
-  path: string;
-}
 
 const Category = ({ content, list }: Props) => {
   const { pathname } = useLocation();
-  const [isOpen, setIsOpen] = useState<boolean>(true);
-  const [isActive, setIsActive] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(true); // 대메뉴 열림, 닫힘 관리
+  const [isActive, setIsActive] = useState<boolean>(false); // 대메뉴 활성화 관리
 
   // 대메뉴 토글 동작 함수
   const toggle = () => {
@@ -43,6 +38,7 @@ const Category = ({ content, list }: Props) => {
 
   return (
     <>
+      {/* 대메뉴 */}
       <MainMenuStyle
         $isActive
         onClick={() => {
@@ -60,6 +56,7 @@ const Category = ({ content, list }: Props) => {
           />
         )}
       </MainMenuStyle>
+      {/* 소메뉴 */}
       {isOpen && (
         <SubMenuStyle>
           {list.map((item) => (

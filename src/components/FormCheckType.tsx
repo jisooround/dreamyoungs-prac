@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import CheckIcon from "../assets/images/check_checked.svg";
+import checkIcon from "../assets/images/check_checked.svg";
 import { IOption } from "../types/data";
 
 type Props = {
@@ -64,7 +64,6 @@ const CheckStyle = styled.div`
   align-items: center;
   span {
     font-size: 12px;
-    color: red;
     position: absolute;
     top: 53px;
     left: 140px;
@@ -104,7 +103,7 @@ const CheckBoxStyle = styled.div`
         box-sizing: border-box;
         border: none;
         background-color: var(--color-primary);
-        background-image: url(${CheckIcon});
+        background-image: url(${checkIcon});
         background-position: center center;
         background-repeat: no-repeat;
         background-size: 11px;

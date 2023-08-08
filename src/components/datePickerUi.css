@@ -16,8 +16,6 @@
   }
 }
 
-.react-datepicker__header--custom {
-}
 /* 다른 달에 일자 표시되는 부분 투명 처리 */
 .react-datepicker__day--keyboard-selected {
   background-color: transparent;

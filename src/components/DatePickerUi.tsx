@@ -1,3 +1,4 @@
+// DatePicker 라이브러리 컴포넌트
 import DatePicker from "react-datepicker";
 import { ko } from "date-fns/locale";
 import { getYear, getMonth } from "date-fns";
@@ -20,9 +21,9 @@ type Props = {
 const CalendarUI = ({ name, date }: Props) => {
   const [startDate, setStartDate] = useState<Date | undefined>(
     date ? new Date(date) : undefined,
-  );
-  const [isBackHover, setIsBackHover] = useState<boolean>(false);
-  const [isNextHover, setIsNextHover] = useState<boolean>(false);
+  ); // 달력 표시 상태 관리
+  const [isBackHover, setIsBackHover] = useState<boolean>(false); // 달력 아이콘 호버 (뒤)
+  const [isNextHover, setIsNextHover] = useState<boolean>(false); // 달력 아이콘 호버 (앞)
 
   useEffect(() => {
     if (date) {
@@ -31,7 +32,6 @@ const CalendarUI = ({ name, date }: Props) => {
   }, [date]);
 
   const years = _.range(1990, getYear(new Date()) + 1, 1);
-
   years.reverse();
   const months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
@@ -124,9 +124,6 @@ const CalendarContainer = styled.div`
   align-items: center;
   img {
     height: 20px;
-  }
-  svg {
-    stroke: red;
   }
 `;
 

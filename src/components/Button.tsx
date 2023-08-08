@@ -1,3 +1,4 @@
+// 제출 버튼 컴포넌트
 import styled from "styled-components";
 
 type Props = {

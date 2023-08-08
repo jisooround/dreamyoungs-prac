@@ -18,21 +18,22 @@ class apiControl {
   async getData() {
     try {
       const { data } = await this.axiosClient.get(`/test`);
-      return data;
+      if (data.ok && data.httpcode === 200) return data;
     } catch (error) {
-      console.log(error);
+      alert(`❌ 에러 발생 : ${error}`);
       throw error;
     }
   }
 
-  async postData(data: IFormData) {
+  async postData(formData: IFormData) {
     try {
-      console.log("data", data);
-      const response = await this.axiosClient.post(`/test`, data);
-      console.log(response.data);
-      return response;
+      const { data } = await this.axiosClient.post(`/test`, formData);
+      if (data.ok && data.httpcode === 200) {
+        alert(`🆗 Post 성공 : ${data.data.message}`);
+        return data;
+      }
     } catch (error) {
-      console.log(error);
+      alert(`❌ 에러 발생 : ${error}`);
       throw error;
     }
   }

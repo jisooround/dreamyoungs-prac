@@ -5,6 +5,12 @@
 ### 실행방법
 
 ```
+$ git clone https://github.com/jisooround/dreamyoungs-prac.git
+```
+```
+$ cd dreamyoungs-prac
+```
+```
 $ npm install
 ```
 

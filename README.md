@@ -35,4 +35,5 @@ $ npm run start
 ### 참고사항
 
 > VSCODE 버전: 1.80.2
+
 > npm 버전 : 9.8.1
